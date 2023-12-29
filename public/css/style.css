@@ -1,0 +1,151 @@
+/* styles.css */
+
+.right-content img {
+    max-width: 110%;
+    max-height: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+    width: 100%;
+    /* Fill the container width */
+}
+
+
+/* Add this to your CSS file or in the head section */
+
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px 0;
+}
+
+.social-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+.subscribe-form {
+    margin-top: 20px;
+}
+
+.subscribe-form input {
+    border-radius: 0;
+}
+
+.subscribe-form button {
+    border-radius: 0;
+}
+
+body {
+    background-color: #eee;
+}
+
+.container {
+    max-width: 800px;
+    /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-form {
+    margin-bottom: 20px;
+}
+
+.weather-input {
+    padding: 8px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.weather-submit {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    /* Align text inside the card to the left */
+    background-color: #fff;
+    /* Add a background color to the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle box shadow */
+    padding: 20px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px;
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    /* Background color for the progress bar container */
+    margin-top: 10px;
+    /* Add some top margin */
+}
+
+.progress div {
+    background-color: red;
+    border-radius: 10px;
+    /* Make sure the progress bar has rounded corners */
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.text2 {
+    color: #a5aec0;
+}
+
+<style>body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.heading {
+    color: #333;
+}
+
+#tempDisplay {
+    font-size: 3em;
+    font-weight: bold;
+    color: #4285f4;
+    /* Google Blue */
+    margin: 20px 0;
+}
+
+</style>

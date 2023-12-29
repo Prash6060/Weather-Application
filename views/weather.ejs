@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/cdn') %>
+        <link rel="stylesheet" href="../public/css/style.css">
+        <title>Weather Application</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+
+        <div class="container mt-5">
+            <div class="weather-form">
+                <input type="text" class="weather-input" id="cityInput" placeholder="Enter city name">
+                <button class="weather-submit" id="submitBtn" onclick="fetchData()">Submit</button>
+            </div>
+
+            <!-- Add a conditional display for the card -->
+            <div class="card p-3 mb-2" id="weatherCard" style="display: none;">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="icon"> <i class="fa-solid fa-city"></i></div>
+                        <div class="ms-2 c-details">
+                            <h4 class="mb-0" id="displayCity"></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <h3 class="heading" id="tempDisplay"></h3>
+                    <div class="mt-5">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+</body>
+<script>
+    let currentCity = '';
+
+    function fetchData() {
+        currentCity = document.getElementById('cityInput').value;
+        const displayCity = document.getElementById('displayCity');
+        displayCity.innerText = currentCity;
+
+        const apiString = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=e129aa98fbf3902d725e7641a973c877`
+
+        fetch(apiString)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Handle the retrieved data
+                const temp = Math.round(data.main.temp - 273);
+                const tempDisplay = document.getElementById('tempDisplay');
+                tempDisplay.innerText = temp + "^C";
+
+                // Show the card after fetching data
+                const weatherCard = document.getElementById('weatherCard');
+                weatherCard.style.display = 'block';
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('Fetch error:', error);
+            });
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+
+    <%- include('partials/cdn') %>
+        <style>
+            /* Custom styling for responsiveness */
+            
+            @media (max-width: 767px) {
+                .footer {
+                    padding: 20px 0;
+                    /* Adjusted padding for smaller screens */
+                }
+                .left-content {
+                    text-align: center;
+                    /* Center text in the left part on small screens */
+                }
+            }
+        </style>
+
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+
+        <!-- --------------------------------------------MAIN BODY------------------------------------------- -->
+
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <!-- Set the width of the main body to 10 parts and center it within the container -->
+                <div class="col-md-10 offset-md-1 row">
+                    <!-- Left Part -->
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="left-content text-center">
+                            <p>"Embrace the elements, wherever you are. Weathering the storm"</p>
+                            <h2>KNOW YOUR WEATHER</h2>
+                            <button onclick="window.location.href='/weather'" class="btn btn-primary">GET STARTED</button>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Part -->
+                    <!-- Right Part -->
+                    <div class="col-md-6">
+                        <div id="imageCarousel" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/85.jpg" class="d-block w-100" alt="Description of the first image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/51.jpg" class="d-block w-100" alt="Description of the second image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/cloudimage.png" class="d-block w-100" alt="Description of the third image">
+                                </div>
+                                <!-- Add more carousel items as needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ----------------------------------------------MAIN BODY--------------------------------------- -->
+
+
+                    <%- include('partials/footer') %>
+</body>
+
+</html>
